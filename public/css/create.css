@@ -1,0 +1,28 @@
+div{
+    width : 50% ;
+    color : #544C40;
+    font-family : "Goole font";
+}
+
+h3{
+    width : 50% ;
+    color : #544C40;
+    font-family : "Goole font";
+}
+
+.bigbox{
+    display : flex;
+    flex-wrap: wrap;
+    width : 100%;
+}
+
+.box{
+    display : flex;
+    flex-wrap: wrap;
+    width : 50%;
+}
+.smallbox{
+    display : flex;
+    flex-wrap: wrap;
+    width : 50%;
+}

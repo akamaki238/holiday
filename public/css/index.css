@@ -1,0 +1,18 @@
+body {
+ background-color: #F4EBDA;
+}
+h1 {
+    color : #544C40;
+    font-family : "Goole font";
+}
+
+.box{
+    display : flex;
+    flex-wrap: wrap;
+}
+
+h3{
+    width : 50% ;
+    color : #544C40;
+    font-family : "Goole font";
+}
