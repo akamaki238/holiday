@@ -61,7 +61,6 @@ class PostController extends Controller
             $route -> post_id = $post -> id;
             $route -> place_id = $tmp;
             $route -> save();
-            
         }
         
         return redirect('/posts/' . $post->id);
