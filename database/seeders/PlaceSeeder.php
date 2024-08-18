@@ -18,7 +18,7 @@ class PlaceSeeder extends Seeder
     public function run()
     {
         DB::table('places')->insert([
-                'image'=>'image1.png',
+                'image'=>'https://res.cloudinary.com/dstqfczpk/image/upload/v1722103549/j9gsr7rin5gyjrvs7eze.jpg',
                 'introduction'=>'そこそこ楽しいです',
                 'name'=>'A公園',
                 'address'=>'A県B市',
@@ -30,7 +30,7 @@ class PlaceSeeder extends Seeder
                 'finish_time'=>Carbon::create(2024, 6, 19, 12, 0, 0),
         ]);
         DB::table('places')->insert([
-                'image'=>'image2.png',
+                'image'=>'https://res.cloudinary.com/dstqfczpk/image/upload/v1722103549/j9gsr7rin5gyjrvs7eze.jpg',
                 'introduction'=>'ほどほどに楽しいです',
                 'name'=>'B公園',
                 'address'=>'A県B市',
@@ -42,7 +42,7 @@ class PlaceSeeder extends Seeder
                 'finish_time'=>Carbon::create(2024, 6, 19, 15, 0, 0),
         ]);
         DB::table('places')->insert([
-                'image'=>'image3.png',
+                'image'=>'https://res.cloudinary.com/dstqfczpk/image/upload/v1722103549/j9gsr7rin5gyjrvs7eze.jpg',
                 'introduction'=>'まあまあ楽しいです',
                 'name'=>'C公園',
                 'address'=>'A県B市',
@@ -55,7 +55,7 @@ class PlaceSeeder extends Seeder
         ]);
         
         DB::table('places')->insert([
-                'image'=>'image4.png',
+                'image'=>'https://res.cloudinary.com/dstqfczpk/image/upload/v1722103549/j9gsr7rin5gyjrvs7eze.jpg',
                 'introduction'=>'けっこー楽しいです',
                 'name'=>'A公園',
                 'address'=>'A県B市',
@@ -68,7 +68,7 @@ class PlaceSeeder extends Seeder
         ]);
         
         DB::table('places')->insert([
-                'image'=>'image5.png',
+                'image'=>'https://res.cloudinary.com/dstqfczpk/image/upload/v1722103549/j9gsr7rin5gyjrvs7eze.jpg',
                 'introduction'=>'そこそこ楽しいです',
                 'name'=>'A公園',
                 'address'=>'A県B市',
@@ -80,7 +80,7 @@ class PlaceSeeder extends Seeder
                 'finish_time'=>Carbon::create(2024, 6, 19, 15, 30, 0),
         ]);
         DB::table('places')->insert([
-                'image'=>'image6.png',
+                'image'=>'https://res.cloudinary.com/dstqfczpk/image/upload/v1722103549/j9gsr7rin5gyjrvs7eze.jpg',
                 'introduction'=>'そこそこ楽しいです',
                 'name'=>'A公園',
                 'address'=>'A県B市',
