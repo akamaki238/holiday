@@ -21,7 +21,7 @@
                     {{ $route->place->start_time}}~{{ $route->place->finish_time}}
                     <br>
                     {{ $route->place->introduction}}
-                    
+                    <img src="{{ $route->place->image }}" alt="" style="max-width: 100px; height: auto;">
                 </h3>
             @endforeach
         </div>

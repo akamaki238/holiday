@@ -12,6 +12,7 @@
     <body>
         <h1>Post list</h1>
         <a href='/posts/create'>create</a>
+        <a href='/posts/search'>search</a>
         <div class='posts'>
             @foreach ($posts as $post)
                 <h2 class='title'>
@@ -22,6 +23,7 @@
                     <div class='box'>
                         @foreach($post->routes as $route)
                             <h3 class='route_id'>
+                                <img src="{{ $route->place->image }}" alt="" style="max-width: 100px; height: auto;">
                                 {{ $route->place_id }}
                                 {{ $route->place->name}}
                             </h3>
@@ -30,58 +32,5 @@
                 </div>
             @endforeach
         </div>
-        
-        
-        
-        <div id="map" style="height:500px"></div>
-        // マップの表示部分
-        <script>
-            function initMap() {
-                map = document.getElementById("map");
-                
-                // 東京タワーの緯度、経度を変数に入れる
-                let tokyoTower = {lat: 35.6585769, lng: 139.7454506};
-                let tokyoTower1= {lat: 35.6585776, lng: 139.7454541};
-
-                // オプションの設定
-                opt = {
-                    // 地図の縮尺を指定
-                    zoom: 13,
-
-                    // センターを東京タワーに指定
-                    center: tokyoTower,
-                };
-
-                // 地図のインスタンスを作成（第一引数にはマップを描画する領域、第二引数にはオプションを指定）
-                mapObj = new google.maps.Map(map, opt);
-                
-                marker = new google.maps.Marker({
-                    // ピンを差す位置を東京タワーに設定
-                    position: tokyoTower,
-
-                    // ピンを差すマップを指定
-                    map: mapObj,
-
-                    // ホバーしたときに「tokyotower」と表示されるように指定
-
-                    title: 'tokyotower',
-                });
-                marker1 = new google.maps.Marker({
-                    // ピンを差す位置を東京タワーに設定
-                    position: tokyoTower1,
-
-                    // ピンを差すマップを指定
-                    map: mapObj,
-
-                    // ホバーしたときに「tokyotower」と表示されるように指定
-
-                    title: 'tokyotower1',
-                });
-            }
-        </script>
-
-        // Google Maps APIの読み込み（keyには自分のAPI_KEYを指定）
-        <script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key={{$api_key}}&callback=initMap" async defer></script>
-        
     </body>
 </html>

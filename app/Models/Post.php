@@ -11,5 +11,9 @@ class Post extends Model
     public function routes(){
         return $this->hasMany(Route::class);
     }
+    public function places()
+    {
+        return $this->hasManyThrough(Place::class, Route::class, 'post_id', 'id', 'id', 'place_id');
+    }
 }
 ?>
