@@ -3,11 +3,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Posts</title>
+
+    <title>休実</title>
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 </head>
 <body>
+
+    <h1>休実</h1>
+    <h1>投稿詳細</h1>
+
     <h1 class="title">
         {{ $post->id }}
     </h1>
@@ -72,5 +78,49 @@
             }
         }
     </script>
+    
+    <!-- コメント表示セクション -->
+    <div class="comments">
+        <h2>コメント</h2>
+        @foreach($post->comments->sortByDesc('created_at') as $comment)
+            <div class="comment">
+                <p>{{ $comment->comment }}</p>
+                <small>{{ $comment->created_at }}</small>
+            </div>
+        @endforeach
+    </div>
+
+    <!-- コメント投稿フォーム -->
+    <div class="comment-form">
+        <form action="/posts/{{ $post->id }}/comments" method="POST">
+            @csrf
+            <textarea name="comments" placeholder="コメントを入力してください"></textarea>
+            <button type="submit">投稿する</button>
+        </form>
+    </div>
+    
+    <div class="like-section">
+        <form action="{{ route('post.like', $post->id) }}" method="POST">
+            @csrf
+            @php
+                $userLiked = $post->likes()->where('user_id', Auth::id())->exists();
+            @endphp
+            <button type="submit">
+                @if($userLiked)
+                    いいねを取り消す
+                @else
+                    いいね
+                @endif
+            </button>
+        </form>
+        <p>いいねの数: {{ $likeCount }}</p>
+    </div>
+    
+    
+    <div class="footer">
+        <a href="/posts">戻る</a>
+    </div>
+    
+
 </body>
 </html>

@@ -18,9 +18,16 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => ['auth']], function(){
     Route::get('/posts', [PostController::class, 'index'])->name('index');
     Route::get('/posts/search', [PostController::class, 'search'])->name('search');
+    Route::get('/posts/mypage', [PostController::class, 'mypage'])->name('mypage');
     Route::get('/posts/create', [PostController::class, 'create'])->name('create');
+    Route::get('/posts/following', [PostController::class, 'followingPosts'])->name('posts.following');
     Route::get('/posts/{post}', [PostController::class ,'show'])->name('show');
     Route::post('/posts', [PostController::class, 'store'])->name('store');
+    Route::post('/posts/{post}/comments', [PostController::class, 'storeComment'])->name('comments.store');
+    Route::post('/posts/{post}/like', [PostController::class, 'like'])->name('post.like');
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+
 });
 
 

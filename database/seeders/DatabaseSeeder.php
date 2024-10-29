@@ -18,7 +18,10 @@ class DatabaseSeeder extends Seeder
                 UserSeeder::class,
                 PostSeeder::class,
                 PlaceSeeder::class,
-                RouteSeeder::class
+                RouteSeeder::class,
+                CommentSeeder::class,
+                LikeSeeder::class,
+                FollowSeeder::class,
         ]);
     }
 }

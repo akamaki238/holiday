@@ -2,19 +2,13 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
-        <title>Blog</title>
+        <title>休実-投稿作成</title>
         <link rel='stylesheet' href='/css/create.css'>
     </head>
     <body>
-        <!--
-        boxが上手く行っていない。（forのうちと外で試したが上手く行っていない）
-        登録画面はこんな感じでひとまず大丈夫そう？
-        
-        グーグルマップからコピペしたコンマ区切りの緯度と経度を緯度と経度それぞれにデータベースに追加。
-        またはグーグルマップで場所名で検索してそれをもとに緯度と経度の追加ができるならそれが良い。（できるだけ一つのページでやりたいことを完結させたい）
-        このとき、ユーザーの情報はあると考えて良い？
-        -->
-        <h1>Blog Name</h1>
+        <h1>休実</h1>
+        <h1>投稿作成</h1>
+
         <form action="/posts" method="POST" enctype="multipart/form-data">
             @csrf
             
@@ -27,9 +21,9 @@
                 ここからは各場所について入力してね！
             </p>
                 <div class="bigbox">
-                    
-                
-                @for ($i = 1; $i < 3; $i++)
+
+                @for ($i = 1; $i < 7; $i++)
+
                 <h3 class="box">
                     {{$i}}つ目の予定を書こう<br>
                     <div class="smallbox">
