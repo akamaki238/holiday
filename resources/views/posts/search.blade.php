@@ -2,12 +2,14 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
+
         <title>休実-検索</title>
     </head>
     <body>
         <div class="container">
             <h1>休実</h1>
             <h1>場所名による検索</h1>
+
             <form method="GET" action="{{ route('search') }}">
                 <div class="form-group">
                     <label for="place_name">Place Name:</label>
@@ -21,7 +23,9 @@
             </form>
     
             @if(isset($posts) && $posts->isNotEmpty())
+
                 <h2>検索結果</h2>
+
                 <ul>
                     @foreach($posts as $post)
                         <li>

@@ -37,6 +37,7 @@ class PostController extends Controller
             'comments' => $comments,
             'likeCount' => $likeCount,
             ]);
+
     }
     
     public function create()
@@ -120,7 +121,7 @@ class PostController extends Controller
         return view('posts.following', compact('posts'));
     }
     
-    public function search(Request $request)
+  public function search(Request $request)
     {
         $query = Post::query();
 
@@ -143,7 +144,7 @@ class PostController extends Controller
 
         return view('posts.search', compact('posts'));
     }
-    
+
     public function mypage()
     {
         // 現在のログインユーザーを取得
@@ -171,6 +172,5 @@ class PostController extends Controller
 
         return redirect()->route('show', ['post' => $postId]);
     }
-    
 }
 ?>

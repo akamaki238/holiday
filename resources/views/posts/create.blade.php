@@ -8,6 +8,7 @@
     <body>
         <h1>休実</h1>
         <h1>投稿作成</h1>
+
         <form action="/posts" method="POST" enctype="multipart/form-data">
             @csrf
             
@@ -20,7 +21,9 @@
                 ここからは各場所について入力してね！
             </p>
                 <div class="bigbox">
+
                 @for ($i = 1; $i < 7; $i++)
+
                 <h3 class="box">
                     {{$i}}つ目の予定を書こう<br>
                     <div class="smallbox">

@@ -23,13 +23,11 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/posts/following', [PostController::class, 'followingPosts'])->name('posts.following');
     Route::get('/posts/{post}', [PostController::class ,'show'])->name('show');
     Route::post('/posts', [PostController::class, 'store'])->name('store');
-    
     Route::post('/posts/{post}/comments', [PostController::class, 'storeComment'])->name('comments.store');
     Route::post('/posts/{post}/like', [PostController::class, 'like'])->name('post.like');
-    
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    
+
 });
 
 

@@ -35,6 +35,7 @@ class ProfileController extends Controller
 
         $user->save();
 
+
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 
@@ -50,6 +51,7 @@ class ProfileController extends Controller
         $user = $request->user();
 
         Auth::logout();
+      
         $user->delete();
 
         $request->session()->invalidate();
@@ -58,6 +60,4 @@ class ProfileController extends Controller
         return Redirect::to('/');
     }
 }
-
-
 ?>
