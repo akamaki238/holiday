@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string("name");
             $table->string("email");
             $table->string("password");
+            $table->rememberToken();
             $table->string("mbti")->nullable(true);
             $table->string("introduction")->nullable(true);
             $table->string("hometown")->nullable(true);

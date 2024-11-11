@@ -8,6 +8,12 @@
     <body>
         <h1>休実</h1>
         <h1>投稿作成</h1>
+        
+        <a href='/posts' class="button">投稿一覧</a>
+        <a href='/posts/create' class="button">投稿作成</a>
+        <a href='/posts/search' class="button">投稿検索</a>
+        <a href='/posts/mypage' class="button">マイページ</a>
+        <a href="/posts/following" class="button">フォロー中の投稿一覧</a>
 
         <form action="/posts" method="POST" enctype="multipart/form-data">
             @csrf
